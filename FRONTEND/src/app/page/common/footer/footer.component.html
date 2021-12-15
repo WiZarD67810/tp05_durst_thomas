@@ -1,0 +1,21 @@
+<div class="bg-dark tp02-footer">
+    <div class="container">
+        <footer class="py-3">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item">
+                    <a class="nav-link text-muted text-decoration-none" *ngIf="!authStatus" routerLink="/" routerLinkActive="active">Produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-muted text-decoration-none" routerLink="/Authentification" *ngIf="!authStatus" routerLinkActive="active">Authentification</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-muted text-decoration-none" *ngIf="authStatus" routerLink="/Information" routerLinkActive="active">Information</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-2 text-muted text-decoration-none" *ngIf="authStatus" (click)="signOut()" routerLink="/" routerLinkActive="active">Se déconnecter</a>
+                </li>
+            </ul>
+            <p class="text-center text-muted">© 2021 TP02</p>
+        </footer>
+    </div>
+</div>

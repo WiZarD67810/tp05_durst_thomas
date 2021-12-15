@@ -1,0 +1,98 @@
+<div class="container">
+    <h1 class="fs-1 text-uppercase text-dark text-center mt-4">Authentification</h1>
+    <div class="w-100 mx-auto mt-4 mb-5">
+        <form class="mx-5 mt-3 mb-3 needs-validation" [formGroup]="authInForm">
+            <div class="form-group my-2 mx-2">
+                <label for="lastName" class="fs-5 ms-2 mb-1">Nom * :</label>
+                <input type="text" id="lastName" class="form-control" onkeyup="this.value = this.value.toUpperCase()" placeholder="Ton nom..." formControlName="lastName" [ngClass]="{'is-invalid': authInForm.controls['lastName'].invalid && (authInForm.controls['lastName'].dirty || authInForm.controls['lastName'].touched), 'is-valid': authInForm.controls['lastName'].valid && authInForm.controls['lastName'].dirty && authInForm.controls['lastName'].touched} ">
+                <div class="text-danger" *ngIf="authInForm.controls['lastName'].invalid && (authInForm.controls['lastName'].dirty || authInForm.controls['lastName'].touched) == true">
+                    <div *ngIf="authInForm.controls['lastName'].errors">Le nom est invalide</div>
+                </div>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="forName" class="fs-5 ms-2 mb-1">Prénom * :</label>
+                <input type="text" id="forName" class="form-control" placeholder="Ton prénom..." formControlName="forName" [ngClass]="{'is-invalid': authInForm.controls['forName'].invalid && (authInForm.controls['forName'].dirty || authInForm.controls['forName'].touched), 'is-valid': authInForm.controls['forName'].valid && authInForm.controls['forName'].dirty && authInForm.controls['forName'].touched}">
+                <div class="text-danger" *ngIf="authInForm.controls['forName'].invalid && (authInForm.controls['forName'].dirty || authInForm.controls['forName'].touched) == true">
+                    <div *ngIf="authInForm.controls['forName'].errors">Le prénom est invalide</div>
+                </div>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="civility" class="fs-5 ms-2 mb-1">Civilité :</label>
+                <select id="civility" class="form-select" formControlName="civility" [ngClass]="{'is-invalid': authInForm.controls['civility'].invalid && (authInForm.controls['civility'].dirty || authInForm.controls['civility'].touched), 'is-valid': authInForm.controls['civility'].valid && authInForm.controls['civility'].dirty && authInForm.controls['civility'].touched}">
+                    <option value="">Choisisez votre civilité</option>
+                    <option value="1">M</option>
+                    <option value="2">Mme</option>
+                </select>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="adresse" class="fs-5 ms-2 mb-1">Adresse * :</label>
+                <input type="text" id="adresse" class="form-control" placeholder="Ton adresse..." formControlName="adresse" [ngClass]="{'is-invalid': authInForm.controls['adresse'].invalid && (authInForm.controls['adresse'].dirty || authInForm.controls['adresse'].touched), 'is-valid': authInForm.controls['adresse'].valid && authInForm.controls['adresse'].dirty && authInForm.controls['adresse'].touched}">
+                <div class="text-danger" *ngIf="authInForm.controls['adresse'].invalid && (authInForm.controls['adresse'].dirty || authInForm.controls['adresse'].touched) == true">
+                    <div *ngIf="authInForm.controls['adresse'].errors">L'adresse' est invalide</div>
+                </div>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="cityCode" class="fs-5 ms-2 mb-1">Code postal * :</label>
+                <input type="text" id="cityCode" maxlength="5" class="form-control" placeholder="Ton code postal..." formControlName="cityCode" [ngClass]="{'is-invalid': authInForm.controls['cityCode'].invalid && (authInForm.controls['cityCode'].dirty || authInForm.controls['cityCode'].touched), 'is-valid': authInForm.controls['cityCode'].valid && authInForm.controls['cityCode'].dirty && authInForm.controls['cityCode'].touched}">
+                <div class="text-danger" *ngIf="authInForm.controls['cityCode'].invalid && (authInForm.controls['cityCode'].dirty || authInForm.controls['cityCode'].touched) == true">
+                    <div *ngIf="authInForm.controls['cityCode'].errors">Le code postal est invalide</div>
+                </div>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="city" class="fs-5 ms-2 mb-1">Ville * :</label>
+                <input type="text" id="city" class="form-control" placeholder="Ta ville..." formControlName="city" [ngClass]="{'is-invalid': authInForm.controls['city'].invalid && (authInForm.controls['city'].dirty || authInForm.controls['city'].touched), 'is-valid': authInForm.controls['city'].valid && authInForm.controls['city'].dirty && authInForm.controls['city'].touched}">
+                <div class="text-danger" *ngIf="authInForm.controls['city'].invalid && (authInForm.controls['city'].dirty || authInForm.controls['city'].touched) == true">
+                    <div *ngIf="authInForm.controls['city'].errors">La ville est invalide</div>
+                </div>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="city" class="fs-5 ms-2 mb-1">Pays * :</label>
+                <input type="text" id="country" class="form-control" placeholder="Ton pays..." formControlName="country" [ngClass]="{'is-invalid': authInForm.controls['country'].invalid && (authInForm.controls['country'].dirty || authInForm.controls['country'].touched), 'is-valid': authInForm.controls['country'].valid && authInForm.controls['country'].dirty && authInForm.controls['country'].touched}">
+                <div class="text-danger" *ngIf="authInForm.controls['country'].invalid && (authInForm.controls['country'].dirty || authInForm.controls['country'].touched) == true">
+                    <div *ngIf="authInForm.controls['country'].errors">Pays est invalide</div>
+                </div>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="mail" class="fs-5 ms-2 mb-1">Adresse mail * :</label>
+                <input type="email" id="mail" class="form-control" placeholder="Ton adresse e-mail..." formControlName="mail" [ngClass]="{'is-invalid': authInForm.controls['mail'].invalid && (authInForm.controls['mail'].dirty || authInForm.controls['mail'].touched), 'is-valid': authInForm.controls['mail'].valid && authInForm.controls['mail'].dirty && authInForm.controls['mail'].touched}">
+                <div class="text-danger" *ngIf="authInForm.controls['mail'].invalid && (authInForm.controls['mail'].dirty || authInForm.controls['mail'].touched) == true">
+                    <div *ngIf="authInForm.controls['mail'].errors">L'e-mail est invalide</div>
+                </div>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="phone" class="fs-5 ms-2 mb-1">Téléphone * :</label>
+                <input type="tel" id="phone" maxlength="10" class="form-control" placeholder="Ton numéro de téléphone..." formControlName="phone" [ngClass]="{'is-invalid': authInForm.controls['phone'].invalid && (authInForm.controls['phone'].dirty || authInForm.controls['phone'].touched), 'is-valid': authInForm.controls['phone'].valid && authInForm.controls['phone'].dirty && authInForm.controls['phone'].touched}">
+                <div class="text-danger" *ngIf="authInForm.controls['phone'].invalid && (authInForm.controls['phone'].dirty || authInForm.controls['phone'].touched) == true">
+                    <div *ngIf="authInForm.controls['phone'].errors">Le téléphone est invalide</div>
+                </div>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="username" class="fs-5 ms-2 mb-1">Login * :</label>
+                <input type="text" id="username" class="form-control" placeholder="Ton login..." formControlName="username" [ngClass]="{'is-invalid': authInForm.controls['username'].invalid && (authInForm.controls['username'].dirty || authInForm.controls['username'].touched), 'is-valid': authInForm.controls['username'].valid && authInForm.controls['username'].dirty && authInForm.controls['username'].touched}">
+                <div class="text-danger" *ngIf="authInForm.controls['username'].invalid && (authInForm.controls['username'].dirty || authInForm.controls['username'].touched) == true">
+                    <div *ngIf="authInForm.controls['username'].errors">Le login est invalide</div>
+                </div>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="password" class="fs-5 ms-2 mb-1">Mot de passe * :</label>
+                <input type="password" id="password" class="form-control" placeholder="Ton mot de passe..." formControlName="password" [ngClass]="{'is-invalid': authInForm.controls['password'].invalid && (authInForm.controls['password'].dirty || authInForm.controls['password'].touched), 'is-valid': authInForm.controls['password'].valid && authInForm.controls['password'].dirty && authInForm.controls['password'].touched}">
+                <div class="text-danger" *ngIf="authInForm.controls['password'].invalid && (authInForm.controls['password'].dirty || authInForm.controls['password'].touched) == true">
+                    <div *ngIf="authInForm.controls['password'].errors">Le mot de passe est invalide</div>
+                </div>
+            </div>
+            <div class="form-group my-2 mx-2">
+                <label for="password2" class="fs-5 ms-2 mb-1">Confirmation du mot de passe * :</label>
+                <input type="password" id="password2" class="form-control" placeholder="Ton mot de passe..." formControlName="password2" [ngClass]="{'is-invalid': authInForm.controls['password2'].invalid && (authInForm.controls['password2'].dirty || authInForm.controls['password2'].touched), 'is-valid': authInForm.controls['password2'].valid && authInForm.controls['password2'].dirty && authInForm.controls['password2'].touched}">
+                <div class="text-danger" *ngIf="authInForm.controls['password2'].invalid && (authInForm.controls['password2'].dirty || authInForm.controls['password2'].touched) == true">
+                    <div *ngIf="authInForm.controls['password2'].errors">La confirmation est invalide</div>
+                </div>
+            </div>
+
+            <div class="form-group my-2 mx-2">
+                <p class="fs-5 TP1-span">* Champs obligatoire</p>
+            </div>
+            
+            <button class="btn btn-success w-100 my-2 mx-2" (click)="onSubmit()" [disabled]="authInForm.invalid && AuthStatus == false">Valider</button>
+        </form>
+    </div>
+</div>

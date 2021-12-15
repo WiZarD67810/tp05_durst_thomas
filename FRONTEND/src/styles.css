@@ -1,0 +1,220 @@
+/* You can add global styles to this file, and also import other style files */
+.tp02-footer {
+    bottom: 0px;
+    width: 100%;
+}
+
+.tp03-link {
+    color: black;
+    text-decoration: none;
+}
+
+.tp03-link:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.tp03-margin-left {
+    margin-left: 2.5px;
+}
+
+.tp03-font {
+    font-family: 'Segoe UI', sans-serif !important;
+}
+
+.star {
+    color: rgb(254, 206, 0);
+}
+
+.tp03-cart-product-header {
+    text-transform: uppercase;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tp03-title-section {
+    color: #969696;
+}
+
+.tp03-cart-product-content {
+    width: 100%;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+
+.tp03-cart-product-content:hover {
+    box-shadow: -4px 6px 8px 1px rgba(190, 189, 189, 0.5);
+}
+
+.tp03-cart-table-cell {
+    vertical-align: middle;
+}
+
+.tp03-cart-product-designation {
+    padding-left: 15px;
+}
+
+.tp03-product-cart-image {
+    float: left;
+    width: 110px;
+    height: 110px;
+}
+
+.tp03-cart-product-text {
+    vertical-align: middle;
+    float: left;
+    margin-top: 0.75rem !important;
+}
+
+.tp03-cart-product-color {
+    color: #505050;
+}
+
+.tp03-product-cart-resume {
+    font-size: 15px;
+    text-transform: none;
+    text-decoration: none;
+    color: #969696;
+}
+
+.tp03-cart-product-right {
+    margin-right: 3rem !important;
+    margin-top: 1.5rem !important;
+    height: 100% !important;
+    width: 10%;
+    float: right;
+}
+
+.tp03-span-prix {
+    color: rgb(219, 0, 36);
+}
+
+.tp03-filter-radio {
+    width: 100%;
+    text-align: center;
+}
+
+.TP04-separator {
+    height: 15px;
+    background-color: rgb(33,37,41) !important;
+}
+
+.TP-cart-value {
+    color: #001e69;
+    border-radius: 100px;
+    background-color: #fff;
+    font-size: 14px;
+    padding: 0 5px;
+    position: relative;
+    bottom: 5px;
+}
+
+@media only screen and (max-width: 1400px) { 
+    .tp03-cart-product-title {
+        font-size: 18px;
+    }
+
+    .tp03-product-cart-resume {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 1200px) { 
+    .tp03-cart-product-title {
+        font-size: 16px;
+    }
+
+    .tp03-product-cart-resume {
+        display: none;
+    }
+
+    .tp03-star {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) { 
+    .tp03-cart-name {
+        position: relative;
+        left: 10px;
+        width: 75%;
+    }
+    
+    .tp03-cart-product-right {
+        height: auto;
+        width: auto;
+        float: none;
+        position: relative;
+        left: 25px;
+    }
+
+    .tp03-cart-product-stock {
+        float: right;
+    }
+
+    .tp03-margin {
+        margin-top: 1rem !important;
+    }
+
+    .tp03-span-prix {
+        position: relative;
+        bottom: -15px;
+    }
+}
+
+/* iPad mini paysage */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    .tp03-cart-product-designation {
+        display: block;
+        width: 100%;
+    }
+
+    .tp03-cart-product-text {
+        float: none;
+    }
+}
+
+/* iPad mini portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .tp03-cart-product-designation {
+        display: block;
+        width: 100%;
+    }
+
+    .tp03-cart-product-text {
+        float: none;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) { 
+    .tp03-cart-section-title {
+        display: block;
+    }
+
+    .tp03-cart-product-text {
+        float: none;
+    }
+
+    .tp03-cart-product-right {
+        height: auto;
+        width: auto;
+        float: none;
+        position: relative;
+        left: 25px;
+    }
+
+    .tp03-cart-product-stock {
+        display: none;
+    }
+
+    .tp03-margin {
+        margin-top: 0 !important;
+    }
+
+    .tp03-span-prix {
+        position: relative;
+        bottom: 10px;
+    }
+}

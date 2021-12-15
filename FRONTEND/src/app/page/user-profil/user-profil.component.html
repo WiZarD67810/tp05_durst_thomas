@@ -1,0 +1,43 @@
+<div class="container">
+    <h1 class="fs-1 text-uppercase text-dark text-center mt-4">Bienvenue</h1>
+    <div class="w-100 mx-auto mt-4 mb-5">
+        <div class="w-100 mx-3 fs-4">Nom :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">{{ User.Nom.toUpperCase() }}</div>
+        <div class="w-100 mx-3 fs-4">Prénom :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">{{ User.Prenom }}</div>
+        <div class="w-100 mx-3 fs-4">Civilité :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">{{ User.Civilite }}</div>
+        <div class="w-100 mx-3 fs-4">Adresse :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">
+            <div *ngFor="let p of AdressesList | async">
+                <p>{{ p }}</p>
+                <button class="btn btn-primary" (click)="deleteAdresse(p)"><i class="bi bi-trash"></i></button>
+            </div>
+            <form class="mx-5 mt-3 mb-3 needs-validation" [formGroup]="authInForm">
+                <div class="form-group my-2 mx-2">
+                    <label for="adresse" class="fs-5 ms-2 mb-1">Ajouter une Adresse :</label>
+                    <input type="text" id="adresse" class="form-control" placeholder="Ton adresse..." formControlName="adresse" [ngClass]="{'is-invalid': authInForm.controls['adresse'].invalid && (authInForm.controls['adresse'].dirty || authInForm.controls['adresse'].touched), 'is-valid': authInForm.controls['adresse'].valid && authInForm.controls['adresse'].dirty && authInForm.controls['adresse'].touched}">
+                    <div class="text-danger" *ngIf="authInForm.controls['adresse'].invalid && (authInForm.controls['adresse'].dirty || authInForm.controls['adresse'].touched) == true">
+                        <div *ngIf="authInForm.controls['adresse'].errors">L'adresse est invalide</div>
+                    </div>
+                </div>
+
+                <button class="btn btn-success w-100 my-2 mx-2" (click)="onSubmit()">Valider</button>
+            </form>
+        </div>
+        <div class="w-100 mx-3 fs-4">Code postal :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">{{ User.CP }}</div>
+        <div class="w-100 mx-3 fs-4">Ville :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">{{ User.Ville }}</div>
+        <div class="w-100 mx-3 fs-4">Pays :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">{{ User.Pays }}</div>
+        <div class="w-100 mx-3 fs-4">Adresse mail :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">{{ User.Email }}</div>
+        <div class="w-100 mx-3 fs-4">Téléphone :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">{{ User.Tel | phone }}</div>
+        <div class="w-100 mx-3 fs-4">Login :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">{{ User.Login }}</div>
+        <div class="w-100 mx-3 fs-4">Mot de passe :</div>
+        <div class="w-100 mx-3 fs-5 text-primary">{{ User.Password }}</div>
+    </div>
+</div>

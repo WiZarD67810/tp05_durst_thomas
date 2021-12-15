@@ -1,0 +1,33 @@
+<article class="my-2">
+    <div class="tp03-cart-product-header tp03-title-section tp03-cart-section-title">
+        <div class="tp03-cart-product-content">
+            <div class="tp03-cart-table-cell tp03-cart-product-designation pb-1">
+                <a routerLink="/Product/{{ Produit.Reference }}">
+                    <img class="tp03-product-cart-image" src="{{ Produit.CheminImage }}">
+                    <div class="tp03-cart-product-text ms-3 tp03-cart-name">
+                        <div class="tp03-cart-product-title tp03-cart-product-color">{{ Produit.Intitule }}</div>
+                        <span class="tp03-product-cart-resume">{{ Produit.Resume }}</span>
+                        <div class="tp03-star">
+                            <span *ngIf="Produit.Note != null">
+                                <span *ngFor="let item of [].constructor(Produit.Note); let i = index">
+                                    <i class="bi bi-star-fill star" *ngIf="i == 0"></i>
+                                    <i class="bi bi-star-fill tp03-margin-left star" *ngIf=" i > 0"></i>
+                                </span>
+                            </span>
+                            <span>
+                                <span *ngFor="let item of [].constructor(5 - Produit.Note); let i = index">
+                                    <i class="bi bi-star star" [ngClass]="{'tp03-margin-left': Produit.Note > 0}" *ngIf="i == 0"></i>
+                                    <i class="bi bi-star tp03-margin-left star" *ngIf=" i > 0"></i>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                <div class="tp03-cart-product-right">
+                    <span class="fs-5 fw-bold tp03-font tp03-margin tp03-span-prix">{{ Produit.Prix }} €</span>
+                    <button class="btn btn-primary tp03-cart-product-stock tp03-margin" (click)="deleteProduct()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
